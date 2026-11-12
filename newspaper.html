@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="P11: Newspaper-style three-column layout using CSS Grid">
+  <title>The Web Gazette | Newspaper Grid Layout (P11)</title>
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/grid.css">
+  <style>
+    body {
+      background-color: #0b0f19;
+    }
+    .newspaper-wrapper {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      padding: var(--space-8);
+      margin-block: var(--space-8);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-lg);
+    }
+    .newspaper-masthead {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 5vw, 4rem);
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      margin-bottom: var(--space-2);
+    }
+    .meta-bar {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid var(--color-border);
+      border-bottom: 2px solid var(--color-text-main);
+      padding-block: var(--space-2);
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-6);
+    }
+    .dropcap::first-letter {
+      font-family: var(--font-serif);
+      float: left;
+      font-size: 3.5rem;
+      line-height: 0.8;
+      padding-top: 4px;
+      padding-right: 8px;
+      padding-bottom: 2px;
+      color: var(--color-accent);
+      font-weight: bold;
+    }
+    .news-article {
+      margin-bottom: var(--space-6);
+    }
+    .news-article h3 {
+      font-family: var(--font-serif);
+      margin-bottom: var(--space-2);
+      color: var(--color-text-main);
+    }
+    .news-article p {
+      text-align: justify;
+      hyphens: auto;
+      margin-bottom: var(--space-3);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header with return link -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand-logo">← Back to Portfolio</a>
+      <span class="brand-badge">Practical P11 Demo</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="newspaper-wrapper">
+      
+      <!-- Newspaper Header & Masthead -->
+      <div class="newspaper-masthead text-center" style="text-align: center;">The Daily Dev Chronicle</div>
+      <div class="meta-bar">
+        <span>Vol. XXIV • No. 104</span>
+        <span>Special Edition: CSS Grid Architecture</span>
+        <span>Bangalore, IN • Price: Open Source</span>
+      </div>
+
+      <!-- The 3-Column Newspaper Grid Container -->
+      <div class="newspaper-container">
+        
+        <!-- Area 1: Top Breaking Lead -->
+        <article class="news-lead-banner">
+          <p style="color: var(--color-accent); font-weight: bold; text-transform: uppercase; font-size: var(--text-xs);">Front Page Breakthrough</p>
+          <h1 style="font-family: var(--font-serif); margin-block: var(--space-2);">CSS Grid Subsumes Complex Web Layouts with Two-Dimensional Precision</h1>
+          <p class="dropcap" style="font-size: var(--text-lg); color: var(--color-text-main);">
+            Developers worldwide celebrate as modern browsers cement full native support for CSS Grid Layout. By enabling coordinate-based positioning across both horizontal rows and vertical columns simultaneously, developers have decoupled DOM source order from responsive screen presentation.
+          </p>
+        </article>
+
+        <!-- Area 2: Sublead Column -->
+        <aside class="news-sublead">
+          <div class="news-article">
+            <h3 style="font-size: var(--text-lg); border-bottom: 1px solid var(--color-border); padding-bottom: var(--space-2);">Market Indices</h3>
+            <p style="font-size: var(--text-sm); margin-top: var(--space-2);">
+              <strong>Flexbox Adoption:</strong> ▲ 99.4%<br>
+              <strong>Grid Usage:</strong> ▲ 94.2%<br>
+              <strong>Float Layouts:</strong> ▼ 1.1% (Deprecated)
+            </p>
+            <p style="font-size: var(--text-xs); color: var(--color-text-muted);">
+              "No more hacky clearfix hacks or nested wrapper hell," comments senior systems architect.
+            </p>
+          </div>
+        </aside>
+
+        <!-- Area 3: Main Editorial Column (Column 1 - 2.2fr) -->
+        <section class="news-col-main">
+          <article class="news-article">
+            <h2>The Demise of Clearfixes and 12-Column Math</h2>
+            <p>
+              Before native CSS Grid arrived, frontend engineers were forced to calculate percentages for column widths and utilize floats or table-cells. These techniques routinely broke whenever dynamic content sizes fluctuated.
+            </p>
+            <p>
+              With Grid's Fractional Units (<code style="color: var(--color-accent);">fr</code>), the browser dynamically computes the remaining available space after considering gaps and fixed-width components. This newspaper page utilizes <code style="color: var(--color-accent);">2.2fr 1.2fr 1fr</code> to establish organic hierarchy.
+            </p>
+            <p>
+              Furthermore, using <code style="color: var(--color-accent);">grid-template-areas</code> enables declarative visual scaffolding directly within the stylesheet, making refactoring responsive layouts a matter of rearranging a few string literals inside media queries.
+            </p>
+          </article>
+        </section>
+
+        <!-- Area 4: Secondary Column (Column 2 - 1.2fr) -->
+        <section class="news-col-secondary">
+          <article class="news-article">
+            <h3>Flexbox Still Reigns on One Axis</h3>
+            <p>
+              While CSS Grid conquers structural page scaffolds, Flexbox remains the supreme standard for linear, content-driven one-dimensional distribution.
+            </p>
+            <p>
+              Navigation bars, inline tags, pill groups, and form input controls naturally align through Flexbox properties like <code style="color: var(--color-accent);">justify-content: space-between</code> and <code style="color: var(--color-accent);">align-items: center</code>.
+            </p>
+            <p>
+              Mastering both layout systems enables a hybrid approach where Grid lays out the macro-canvas while Flexbox arranges the micro-components within each grid cell.
+            </p>
+          </article>
+        </section>
+
+        <!-- Area 5: Tertiary Column / Opinion (Column 3 - 1fr) -->
+        <aside class="news-col-tertiary">
+          <article class="news-article">
+            <h3>Weather &amp; Tech Trends</h3>
+            <p style="font-size: var(--text-sm);">
+              <strong>Bangalore:</strong> 24°C, Sunny.<br>
+              <strong>Vibe:</strong> High bandwidth, zero compilation errors.
+            </p>
+          </article>
+
+          <article class="news-article" style="border-top: 1px dashed var(--color-border); padding-top: var(--space-4);">
+            <h4>Letters to Editor</h4>
+            <p style="font-size: var(--text-sm); font-style: italic;">
+              "Writing semantic HTML combined with modern CSS Grid feels like returning to craftsmanship."
+            </p>
+            <p style="font-size: var(--text-xs); color: var(--color-text-subtle);">— Student of Practical P11</p>
+          </article>
+        </aside>
+
+        <!-- Area 6: News Footer -->
+        <footer class="news-footer">
+          <p style="font-size: var(--text-xs); color: var(--color-text-muted);">
+            Demonstration of Practical P11: Three-Column Newspaper Layout engineered with CSS Grid Areas and Fractional Tracks.
+          </p>
+        </footer>
+
+      </div>
+    </div>
+  </main>
+</body>
+</html>
