@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal Developer Biography - Practical P5 Semantic HTML">
+  <title>Developer Biography | Semantic HTML (P5)</title>
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <style>
+    .bio-wrapper {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: var(--space-8);
+      margin-block: var(--space-8);
+    }
+    .profile-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6);
+      text-align: center;
+    }
+    .avatar-placeholder {
+      width: 140px;
+      height: 140px;
+      margin: 0 auto var(--space-4);
+      border-radius: var(--radius-full);
+      background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--text-3xl);
+      font-weight: bold;
+      color: white;
+      box-shadow: var(--shadow-glow);
+    }
+    .quick-facts {
+      background: var(--color-surface-card);
+      border-left: 4px solid var(--color-accent);
+      padding: var(--space-4);
+      border-radius: var(--radius-md);
+      margin-top: var(--space-6);
+    }
+    .quick-facts ul {
+      list-style-type: none;
+      margin-top: var(--space-2);
+    }
+    .quick-facts li {
+      padding-block: var(--space-1);
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+    }
+    .timeline-item {
+      margin-bottom: var(--space-6);
+      padding-left: var(--space-4);
+      border-left: 2px solid var(--color-border);
+    }
+    .timeline-item h4 {
+      color: var(--color-accent);
+    }
+    .page-header, .page-footer {
+      padding-block: var(--space-6);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .page-footer {
+      border-bottom: none;
+      border-top: 1px solid var(--color-border);
+      text-align: center;
+      margin-top: var(--space-12);
+    }
+    @media (max-width: 768px) {
+      .bio-wrapper {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header: Semantic Site Header -->
+  <header class="page-header">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+      <a href="index.html" style="font-weight: bold; font-size: var(--text-xl);">← Portfolio Home</a>
+      <span style="color: var(--color-text-subtle);">P5: Semantic Bio Page</span>
+    </div>
+  </header>
+
+  <!-- Main: Principal Content Landmark -->
+  <main class="container">
+    <div class="bio-wrapper">
+      <!-- Article: Primary Independent Narrative Content -->
+      <article>
+        <header>
+          <p style="text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-accent); font-weight: var(--font-weight-semibold);">About Me</p>
+          <h1>Deepak Kumar</h1>
+          <p style="font-size: var(--text-lg); margin-top: var(--space-2);">Full-Stack Software Engineer &amp; UI Systems Enthusiast</p>
+        </header>
+
+        <section style="margin-top: var(--space-6);">
+          <h2>Biography</h2>
+          <p style="margin-top: var(--space-2);">
+            Hello! I am a passionate developer focused on engineering high-performance, accessible, and user-centric web applications. My foundation is built on modern standards-compliant semantic HTML, responsive CSS architecture, and clean JavaScript workflows.
+          </p>
+          <p style="margin-top: var(--space-3);">
+            When I am not designing user interfaces or writing clean backend APIs, I explore open-source tools, developer productivity enhancements, and algorithms.
+          </p>
+        </section>
+
+        <!-- Section: Education & Background -->
+        <section style="margin-top: var(--space-8);">
+          <h2>Education &amp; Milestones</h2>
+          
+          <div class="timeline-item" style="margin-top: var(--space-4);">
+            <h4>B.Tech in Computer Science &amp; Engineering</h4>
+            <p><strong>University Institute of Technology</strong> • 2022 – Present</p>
+            <p>Specialization in Distributed Systems, Full-Stack Architecture, and UI/UX Design Systems.</p>
+          </div>
+
+          <div class="timeline-item">
+            <h4>Full-Stack Web Development Certification</h4>
+            <p><strong>Meta / Coursera</strong> • 2023</p>
+            <p>Comprehensive curriculum covering Semantic HTML5, CSS Grid/Flexbox, React, and Git workflows.</p>
+          </div>
+        </section>
+
+        <!-- Section: Core Philosophy -->
+        <section style="margin-top: var(--space-8);">
+          <h2>Design &amp; Engineering Philosophy</h2>
+          <blockquote style="border-left: 4px solid var(--color-primary); padding-left: var(--space-4); margin-block: var(--space-3); font-style: italic; color: var(--color-text-main);">
+            "Simplicity is prerequisite for reliability. Semantic code empowers accessibility, performance, and long-term maintainability."
+          </blockquote>
+        </section>
+      </article>
+
+      <!-- Aside: Secondary / Complementary Information -->
+      <aside>
+        <div class="profile-card">
+          <!-- Figure and Figcaption for Semantic Image Representation -->
+          <figure>
+            <div class="avatar-placeholder" aria-label="Deepak Kumar Avatar">DK</div>
+            <figcaption style="font-size: var(--text-sm); color: var(--color-text-muted);">
+              <strong>Deepak Kumar</strong><br>
+              Bangalore, India
+            </figcaption>
+          </figure>
+
+          <div class="quick-facts">
+            <h3 style="font-size: var(--text-base); color: var(--color-text-main);">Fast Facts</h3>
+            <ul>
+              <li><strong>Focus:</strong> Frontend &amp; Web Systems</li>
+              <li><strong>Preferred Stack:</strong> HTML5, CSS3, JS/TS</li>
+              <li><strong>Current Goal:</strong> Mastering CSS Grid &amp; Flexbox</li>
+              <li><strong>Status:</strong> Open to Collaborations</li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Footer: Semantic Page Footer -->
+  <footer class="page-footer">
+    <div class="container">
+      <p>&copy; 2026 Deepak Kumar. Built with semantic HTML5 for Practical P5.</p>
+    </div>
+  </footer>
+</body>
+</html>
