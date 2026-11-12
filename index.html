@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Deepak Kumar - Full-Stack Developer Portfolio showcasing Practicals P1 to P13">
+  <title>Deepak Kumar | Developer Portfolio (P1–P13)</title>
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/grid.css">
+  
+  <style>
+    /* Section headers & accent badges */
+    .section-title-wrap {
+      text-align: center;
+      max-width: 650px;
+      margin-inline: auto;
+      margin-bottom: var(--space-8);
+    }
+    .section-subtitle {
+      color: var(--color-accent);
+      text-transform: uppercase;
+      font-size: var(--text-xs);
+      letter-spacing: 0.12em;
+      font-weight: var(--font-weight-semibold);
+      margin-bottom: var(--space-2);
+    }
+    .contact-form {
+      max-width: 600px;
+      margin-inline: auto;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      padding: var(--space-8);
+      border-radius: var(--radius-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+    .form-group label {
+      font-size: var(--text-sm);
+      font-weight: var(--font-weight-medium);
+      color: var(--color-text-main);
+    }
+    .form-control {
+      width: 100%;
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: var(--space-3);
+      color: var(--color-text-main);
+      font-family: inherit;
+      font-size: var(--text-sm);
+      outline: none;
+      transition: border-color var(--transition-fast);
+    }
+    .form-control:focus {
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 2px rgba(6, 182, 212, 0.2);
+    }
+    .curriculum-banner {
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(6, 182, 212, 0.1));
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      padding: var(--space-4) var(--space-6);
+      border-radius: var(--radius-lg);
+      margin-bottom: var(--space-10);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: var(--space-4);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================================================
+       P8, P9, P10: Sticky Header & Advanced Flexbox Navigation
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="container navbar">
+      <!-- Brand Logo / ID -->
+      <a href="index.html" class="brand-logo" aria-label="Portfolio Home">
+        <span>Deepak.dev</span>
+        <span class="brand-badge">P1–P13</span>
+      </a>
+
+      <!-- Responsive Navigation Links (Flexbox) -->
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-menu">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#comparison" class="nav-link">Flex vs Grid</a></li>
+          <li><a href="bio.html" class="nav-link" title="P5 Semantic Bio">Bio Page (P5)</a></li>
+          <li><a href="newspaper.html" class="nav-link" title="P11 Newspaper Grid">Gazette (P11)</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header CTA -->
+      <a href="#contact" class="btn btn-primary">Get In Touch</a>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       P6: Full Semantic Structure - Main Landmark
+       ======================================================================== -->
+  <main class="container">
+
+    <!-- Practical Curriculum Badge Bar -->
+    <aside class="curriculum-banner" style="margin-top: var(--space-6);">
+      <div>
+        <strong style="color: var(--color-accent);">Academic Web Curriculum Verification</strong>
+        <p style="font-size: var(--text-xs); margin-top: var(--space-1);">
+          Complete implementation of Modules 1–3 (Practicals P1 through P13).
+        </p>
+      </div>
+      <div style="display: flex; gap: var(--space-2); flex-wrap: wrap;">
+        <a href="bio.html" class="btn btn-outline" style="font-size: var(--text-xs);">Open P5 Bio</a>
+        <a href="newspaper.html" class="btn btn-outline" style="font-size: var(--text-xs);">Open P11 Newspaper</a>
+        <a href="LAYOUT-COMPARISON.md" class="btn btn-outline" style="font-size: var(--text-xs);">Read P13 Spec</a>
+      </div>
+    </aside>
+
+    <!-- ======================================================================
+         Hero Section: Flexbox Two-Column Flow
+         ====================================================================== -->
+    <section class="hero" id="hero" aria-labelledby="hero-heading">
+      <div class="hero-content">
+        <span class="hero-badge">✦ Available for Engineering Roles</span>
+        <h1 id="hero-heading">Crafting Resilient Web Systems with Semantic Code</h1>
+        <p style="margin-top: var(--space-4); font-size: var(--text-lg);">
+          Hi, I am Deepak Kumar. I build responsive, accessible, high-performance web interfaces utilizing modern CSS layout architecture, semantic HTML5, and Git best practices.
+        </p>
+        
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View Featured Projects</a>
+          <a href="#comparison" class="btn btn-outline">Explore CSS Layout Systems</a>
+        </div>
+      </div>
+
+      <!-- Hero Visual Card with subtle glassmorphic styling -->
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div style="display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-4);">
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-full); background: var(--color-primary); display: flex; align-items: center; justify-content: center; font-weight: bold; color: white;">DK</div>
+            <div>
+              <h3 style="font-size: var(--text-base);">Deepak Kumar</h3>
+              <p style="font-size: var(--text-xs);">Full-Stack &amp; UI Systems</p>
+            </div>
+          </div>
+          <p style="font-size: var(--text-sm); color: var(--color-text-muted);">
+            "Good design is obvious. Great design is transparent and built on clean semantics."
+          </p>
+          <div style="margin-top: var(--space-4); padding-top: var(--space-3); border-top: 1px solid var(--color-border); display: flex; justify-content: space-between; font-size: var(--text-xs); color: var(--color-accent);">
+            <span>Git • HTML5 • CSS3</span>
+            <span>Flexbox • Grid</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         About Section (Semantic Section & Article)
+         ====================================================================== -->
+    <section id="about" style="padding-block: var(--space-12);" aria-labelledby="about-heading">
+      <div class="section-title-wrap">
+        <p class="section-subtitle">P6 / Semantic Architecture</p>
+        <h2 id="about-heading">About My Engineering Journey</h2>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-6);">
+        <article style="background: var(--color-surface); padding: var(--space-6); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+          <h3 style="font-size: var(--text-xl); margin-bottom: var(--space-3); color: var(--color-accent);">01. Semantic Foundations</h3>
+          <p>
+            Writing accessible HTML without relying on arbitrary `div` soup. By employing native landmarks like `<header>`, `<nav>`, `<main>`, `<article>`, and `<footer>`, assistive technologies and search bots seamlessly parse document hierarchy.
+          </p>
+        </article>
+
+        <article style="background: var(--color-surface); padding: var(--space-6); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+          <h3 style="font-size: var(--text-xl); margin-bottom: var(--space-3); color: var(--color-accent);">02. Systematic CSS Tokens</h3>
+          <p>
+            Using CSS custom variables for fluid typography scale (<code style="color: var(--color-accent);">clamp()</code>), harmonious color palettes, and proportional spacing ramps. Changes ripple across the entire layout instantly without refactoring.
+          </p>
+        </article>
+
+        <article style="background: var(--color-surface); padding: var(--space-6); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+          <h3 style="font-size: var(--text-xl); margin-bottom: var(--space-3); color: var(--color-accent);">03. Version Control Rigor</h3>
+          <p>
+            Adopting conventional commits, feature-branch workflows (<code style="color: var(--color-accent);">feature/*</code>), semantic tags (<code style="color: var(--color-accent);">v1.0.0</code>), and pull-request hygiene for auditable teamwork.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         Skills Section: Flexbox & Grid Showcase
+         ====================================================================== -->
+    <section id="skills" style="padding-block: var(--space-12);" aria-labelledby="skills-heading">
+      <div class="section-title-wrap">
+        <p class="section-subtitle">Technical Proficiency</p>
+        <h2 id="skills-heading">Core Skills &amp; Competencies</h2>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-icon">⚡</div>
+          <h4>Terminal &amp; CLI</h4>
+          <p style="font-size: var(--text-xs); color: var(--color-text-subtle); margin-top: var(--space-1);">P1 Navigation</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🌿</div>
+          <h4>Git &amp; GitHub</h4>
+          <p style="font-size: var(--text-xs); color: var(--color-text-subtle); margin-top: var(--space-1);">P2-P4 Branching</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🏗️</div>
+          <h4>Semantic HTML5</h4>
+          <p style="font-size: var(--text-xs); color: var(--color-text-subtle); margin-top: var(--space-1);">P5-P6 Landmarks</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🎨</div>
+          <h4>CSS Tokens</h4>
+          <p style="font-size: var(--text-xs); color: var(--color-text-subtle); margin-top: var(--space-1);">P7 Variables</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">📌</div>
+          <h4>CSS Positioning</h4>
+          <p style="font-size: var(--text-xs); color: var(--color-text-subtle); margin-top: var(--space-1);">P8 Sticky / Overlays</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">📐</div>
+          <h4>Flexbox 1D</h4>
+          <p style="font-size: var(--text-xs); color: var(--color-text-subtle); margin-top: var(--space-1);">P9-P10 Alignment</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🗂️</div>
+          <h4>CSS Grid 2D</h4>
+          <p style="font-size: var(--text-xs); color: var(--color-text-subtle); margin-top: var(--space-1);">P11-P12 Grids</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         P8, P9, P12: Projects Grid (CSS Grid + Positioned Overlays)
+         ====================================================================== -->
+    <section id="projects" style="padding-block: var(--space-12);" aria-labelledby="projects-heading">
+      <div class="section-title-wrap">
+        <p class="section-subtitle">P8 Positioning + P12 Advanced CSS Grid</p>
+        <h2 id="projects-heading">Featured Portfolio Projects</h2>
+        <p style="margin-top: var(--space-2);">
+          Demonstrating `grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))`, featured 2-column span, and absolute card overlays on hover.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+        
+        <!-- Project 1: FEATURED CARD (Spans 2 columns on desktop) -->
+        <article class="project-card featured">
+          <div class="card-media-wrapper">
+            <!-- P8: Absolute Floating Badge -->
+            <span class="card-floating-badge">Featured • P11 &amp; P12</span>
+            
+            <div style="font-size: var(--text-3xl); font-weight: bold; color: var(--color-accent); font-family: var(--font-serif);">
+              The Web Gazette
+            </div>
+
+            <!-- P8: Absolute Hover Overlay -->
+            <div class="card-overlay">
+              <h4 style="color: white;">Newspaper 3-Column Grid</h4>
+              <p style="color: var(--color-text-muted); font-size: var(--text-sm);">Interactive demonstration using named grid-template-areas.</p>
+              <a href="newspaper.html" class="btn btn-primary" style="font-size: var(--text-xs);">Open Gazette Demo →</a>
+            </div>
+          </div>
+
+          <div class="card-content">
+            <h3>Newspaper Editorial Layout (P11)</h3>
+            <p style="margin-top: var(--space-2);">
+              A multi-column editorial frontpage built with fractional tracks (<code style="color: var(--color-accent);">2.2fr 1.2fr 1fr</code>), dropcaps, masthead branding, and responsive area reordering.
+            </p>
+            <div class="card-tags">
+              <span class="tag-pill">CSS Grid</span>
+              <span class="tag-pill">Grid Areas</span>
+              <span class="tag-pill">Fractional Units</span>
+              <span class="tag-pill">Typography</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card">
+          <div class="card-media-wrapper">
+            <span class="card-floating-badge">P5 Showcase</span>
+            <div style="font-size: var(--text-2xl); font-weight: bold; color: var(--color-primary);">
+              Semantic Bio
+            </div>
+
+            <div class="card-overlay">
+              <h4 style="color: white;">Semantic Biography</h4>
+              <p style="color: var(--color-text-muted); font-size: var(--text-sm);">Accessible profile with semantic tags.</p>
+              <a href="bio.html" class="btn btn-primary" style="font-size: var(--text-xs);">View Bio Page →</a>
+            </div>
+          </div>
+
+          <div class="card-content">
+            <h3>Semantic Biography Page</h3>
+            <p style="margin-top: var(--space-2);">
+              Built with `<header>`, `<main>`, `<article>`, `<figure>`, `<figcaption>`, and `<aside>` for clean accessibility.
+            </p>
+            <div class="card-tags">
+              <span class="tag-pill">HTML5</span>
+              <span class="tag-pill">Accessibility</span>
+              <span class="tag-pill">Semantic Tags</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card">
+          <div class="card-media-wrapper">
+            <span class="card-floating-badge">P7 &amp; P8 Tokens</span>
+            <div style="font-size: var(--text-2xl); font-weight: bold; color: #a855f7;">
+              Design System
+            </div>
+
+            <div class="card-overlay">
+              <h4 style="color: white;">CSS Design Tokens</h4>
+              <p style="color: var(--color-text-muted); font-size: var(--text-sm);">Fluid typography with clamp() and variable palette.</p>
+              <a href="styles/tokens.css" target="_blank" class="btn btn-primary" style="font-size: var(--text-xs);">Inspect Tokens CSS →</a>
+            </div>
+          </div>
+
+          <div class="card-content">
+            <h3>Design Tokens &amp; Elevation</h3>
+            <p style="margin-top: var(--space-2);">
+              Centralized CSS custom properties for uniform dark-mode color harmony, spacing scales, and fluid responsive font sizes.
+            </p>
+            <div class="card-tags">
+              <span class="tag-pill">CSS Variables</span>
+              <span class="tag-pill">Fluid Typography</span>
+              <span class="tag-pill">Shadows</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="project-card">
+          <div class="card-media-wrapper">
+            <span class="card-floating-badge">P13 Architecture</span>
+            <div style="font-size: var(--text-2xl); font-weight: bold; color: #10b981;">
+              Flex vs Grid
+            </div>
+
+            <div class="card-overlay">
+              <h4 style="color: white;">Technical Spec</h4>
+              <p style="color: var(--color-text-muted); font-size: var(--text-sm);">Decision framework for modern layout engines.</p>
+              <a href="LAYOUT-COMPARISON.md" class="btn btn-primary" style="font-size: var(--text-xs);">Read Comparison Doc →</a>
+            </div>
+          </div>
+
+          <div class="card-content">
+            <h3>Layout Engine Comparison Spec</h3>
+            <p style="margin-top: var(--space-2);">
+              A technical document detailing when to choose 1-dimensional Flexbox versus 2-dimensional CSS Grid with trade-offs.
+            </p>
+            <div class="card-tags">
+              <span class="tag-pill">Layout Engines</span>
+              <span class="tag-pill">Flexbox 1D</span>
+              <span class="tag-pill">Grid 2D</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         P13: Interactive Choosing Between Flexbox and Grid Section
+         ====================================================================== -->
+    <section id="comparison" style="padding-block: var(--space-12);" aria-labelledby="comparison-heading">
+      <div class="section-title-wrap">
+        <p class="section-subtitle">Practical P13</p>
+        <h2 id="comparison-heading">Choosing Between Flexbox &amp; CSS Grid</h2>
+        <p style="margin-top: var(--space-2);">
+          Both layout systems complement each other. Use this guide to pick the right engine for the job:
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--space-6);">
+        <!-- Flexbox Card -->
+        <div style="background: var(--color-surface); border: 2px solid var(--color-primary); border-radius: var(--radius-lg); padding: var(--space-6);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-4);">
+            <h3 style="color: var(--color-primary);">When to use Flexbox (1D)</h3>
+            <span class="tag-pill" style="border-color: var(--color-primary); color: white;">One Dimension</span>
+          </div>
+          <ul style="list-style: disc; padding-left: var(--space-5); color: var(--color-text-muted); display: flex; flex-direction: column; gap: var(--space-2);">
+            <li><strong>Content-First Layout:</strong> Content sizes dictate how much space each item takes.</li>
+            <li><strong>Single Row or Single Column:</strong> Navigation bars, form inputs beside buttons, breadcrumbs.</li>
+            <li><strong>Distribution &amp; Alignment:</strong> Centering items vertically (`align-items: center`), spacing them out (`justify-content: space-between`).</li>
+            <li><strong>Wrapping Tag Clouds:</strong> Elements wrap naturally across rows without needing column alignment.</li>
+          </ul>
+        </div>
+
+        <!-- CSS Grid Card -->
+        <div style="background: var(--color-surface); border: 2px solid var(--color-accent); border-radius: var(--radius-lg); padding: var(--space-6);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-4);">
+            <h3 style="color: var(--color-accent);">When to use CSS Grid (2D)</h3>
+            <span class="tag-pill" style="border-color: var(--color-accent); color: white;">Two Dimensions</span>
+          </div>
+          <ul style="list-style: disc; padding-left: var(--space-5); color: var(--color-text-muted); display: flex; flex-direction: column; gap: var(--space-2);">
+            <li><strong>Layout-First Architecture:</strong> You define the strict rows and columns, then place items inside.</li>
+            <li><strong>Card Grids with Consistent Alignments:</strong> Items align across both horizontal rows and vertical columns.</li>
+            <li><strong>Spanning Cells:</strong> Featured cards or hero banners that span across 2 or more columns/rows.</li>
+            <li><strong>Complex Page Layouts:</strong> Newspapers, dashboards, photo galleries, and magazine covers.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         Contact Section (Semantic Form)
+         ====================================================================== -->
+    <section id="contact" style="padding-block: var(--space-12);" aria-labelledby="contact-heading">
+      <div class="section-title-wrap">
+        <p class="section-subtitle">Get in Touch</p>
+        <h2 id="contact-heading">Contact &amp; Inquiries</h2>
+      </div>
+
+      <form class="contact-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Form submitted! (Demo only)');">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" class="form-control" placeholder="John Doe" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" class="form-control" placeholder="john@example.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" class="form-control" rows="4" placeholder="Hello Deepak, let's discuss..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="align-self: flex-start; margin-top: var(--space-2);">Send Message</button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       P10: Multi-Column Advanced Flexbox Footer
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main">
+        <!-- Col 1: Brand Info -->
+        <div class="footer-col-brand">
+          <a href="index.html" class="brand-logo" style="margin-bottom: var(--space-3);">
+            <span>Deepak.dev</span>
+          </a>
+          <p style="font-size: var(--text-sm); color: var(--color-text-muted); max-width: 300px;">
+            A showcase portfolio demonstrating the core web technologies curriculum from P1 through P13.
+          </p>
+        </div>
+
+        <!-- Col 2: Navigation Links -->
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#comparison">Layout Guide</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Practical Demos -->
+        <div class="footer-col">
+          <h4>Practicals</h4>
+          <ul class="footer-links">
+            <li><a href="bio.html">P5: Semantic Bio</a></li>
+            <li><a href="newspaper.html">P11: Newspaper Grid</a></li>
+            <li><a href="LAYOUT-COMPARISON.md">P13: Comparison Spec</a></li>
+            <li><a href="README.md">P4: Project README</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Connect / Social -->
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul class="footer-links">
+            <li><a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter / X</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Row -->
+      <div class="footer-bottom">
+        <p>&copy; 2026 Deepak Kumar. Built for Web Development Practicals P1–P13.</p>
+        <ul class="social-links">
+          <li><a href="#hero">Back to top ↑</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

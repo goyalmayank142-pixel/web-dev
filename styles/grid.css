@@ -1,0 +1,150 @@
+/* ==========================================================================
+   P11 & P12: Modern CSS Grid Systems
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   P12: Advanced Portfolio Projects Grid
+   - Auto-fit & minmax pattern for responsive columns without media queries
+   - Featured project item spanning 2 columns
+   -------------------------------------------------------------------------- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+}
+
+/* Featured card: Spans 2 grid columns on screens with enough space */
+@media (min-width: 900px) {
+  .project-card.featured {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+  }
+
+  .project-card.featured .card-media-wrapper {
+    height: 100%;
+    min-height: 280px;
+  }
+}
+
+/* Skills Grid: Responsive auto-fill badges */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+}
+
+.skill-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  text-align: center;
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.skill-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-accent);
+}
+
+.skill-icon {
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-2);
+}
+
+/* --------------------------------------------------------------------------
+   P11: Newspaper-Style Three-Column Layout (CSS Grid)
+   - Header spanning full width
+   - 3 columns with specific fractional proportions (2fr, 1fr, 1fr)
+   - Sub-articles and sidebars positioned using named grid areas or explicit lines
+   -------------------------------------------------------------------------- */
+.newspaper-container {
+  display: grid;
+  grid-template-columns: 2.2fr 1.2fr 1fr;
+  grid-template-areas:
+    "headline headline headline"
+    "lead     lead     sublead"
+    "main     side1    side2"
+    "footer   footer   footer";
+  gap: var(--space-8);
+  margin-block: var(--space-8);
+}
+
+.news-header {
+  grid-area: headline;
+  text-align: center;
+  border-bottom: 3px double var(--color-border-light);
+  padding-bottom: var(--space-6);
+}
+
+.news-lead-banner {
+  grid-area: lead;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--space-4);
+}
+
+.news-sublead {
+  grid-area: sublead;
+  border-left: 1px solid var(--color-border);
+  padding-left: var(--space-4);
+}
+
+.news-col-main {
+  grid-area: main;
+}
+
+.news-col-secondary {
+  grid-area: side1;
+  border-left: 1px solid var(--color-border);
+  padding-left: var(--space-6);
+}
+
+.news-col-tertiary {
+  grid-area: side2;
+  border-left: 1px solid var(--color-border);
+  padding-left: var(--space-6);
+}
+
+.news-footer {
+  grid-area: footer;
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-4);
+  text-align: center;
+}
+
+/* Responsive collapse for Newspaper layout */
+@media (max-width: 900px) {
+  .newspaper-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "headline headline"
+      "lead     lead"
+      "sublead  sublead"
+      "main     side1"
+      "side2    side2"
+      "footer   footer";
+  }
+  .news-col-secondary,
+  .news-col-tertiary,
+  .news-sublead {
+    border-left: none;
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .newspaper-container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "headline"
+      "lead"
+      "sublead"
+      "main"
+      "side1"
+      "side2"
+      "footer";
+  }
+}
